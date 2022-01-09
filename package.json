@@ -1,0 +1,23 @@
+{
+  "name": "rhychell",
+  "version": "1.0.0",
+  "description": "Chellenge",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cottons-kr/RhyChell.git"
+  },
+  "author": "cottons",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/cottons-kr/RhyChell/issues"
+  },
+  "homepage": "https://github.com/cottons-kr/RhyChell#readme",
+  "dependencies": {
+    "express": "^4.17.2"
+  }
+}
