@@ -17,6 +17,7 @@ def recvFile(sock:socket, filename):
             data = sock.recv(1024)
             if data.decode() == "no file":
                 log(f"요청한 파일이 없음 : {filename}", 2)
+                os.remove(filename)
                 return 0
             while data:
                 file.write(data)
@@ -28,14 +29,14 @@ app = Flask(__name__)
 
 @app.route('/')
 def home():
-    if os.path.isfile("templates/index.html"):
-        back.send("send index.html".encode())
+    if not os.path.isfile("templates/index.html"):
+        back.send("send templates/index.html".encode())
         recvFile(back, "templates/index.html")
-    if os.path.isfile("static/index.css"):
-        back.send("send index.css".encode())
+    if not os.path.isfile("static/index.css"):
+        back.send("send static/index.css".encode())
         recvFile(back, "static/index.css")
-    if os.path.isfile("static/index.js"):
-        back.send("send index.js".encode())
+    if not os.path.isfile("static/index.js"):
+        back.send("send static/index.js".encode())
         recvFile(back, "static/index.js")
     return render_template("index.html")
 
