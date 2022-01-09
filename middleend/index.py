@@ -2,6 +2,7 @@ from flask import Flask, render_template
 from socket import *
 from log import log
 import os
+import ssl
 
 HOST = "127.0.0.1"
 PORT = 3000
@@ -42,4 +43,4 @@ def home():
     return render_template("index.html")
 
 if __name__ == '__main__':
-    app.run()
+    app.run(ssl_context='adhoc')
