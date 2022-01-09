@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, render_template
 from socket import *
 from log import log
 import os
@@ -37,7 +37,7 @@ def home():
     if os.path.isfile("index.js"):
         back.send("send index.js".encode())
         recvFile(back, "index.js")
-    
+    return render_template(open("index.html", 'r').read())
 
 if __name__ == '__main__':
     app.run()
