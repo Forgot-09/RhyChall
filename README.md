@@ -1,2 +1,2 @@
 # RhyChell
-https://github.com/cottons-kr/RhyChall
+https://cottons-kr.github.io/RhyChall/
