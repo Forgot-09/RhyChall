@@ -37,6 +37,7 @@ def home():
     if os.path.isfile("index.js"):
         back.send("send index.js".encode())
         recvFile(back, "index.js")
+    
 
 if __name__ == '__main__':
     app.run()
