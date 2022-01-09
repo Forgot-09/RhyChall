@@ -14,7 +14,7 @@ while 1:
         target = cmd.split(' ')[1]
         log(f"파일전송 : {target}")
         if not os.path.isfile(target):
-            log(f"요청한 파일이 없음 : {target}", 2)
+            log(f"요청한 파일이 없음 : {target}")
             sock.send("no file".encode())
             continue
         with open(target, "rb") as file:
