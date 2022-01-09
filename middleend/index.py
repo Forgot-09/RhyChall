@@ -1,19 +1,19 @@
 from flask import Flask, render_template
 from socket import *
-#from log import log
+from log import log
 import os
 
 HOST = "127.0.0.1"
 PORT = 3000
-'''
+
 sock = socket(AF_INET, SOCK_STREAM)
 sock.bind((HOST, PORT))
 sock.listen(1)
 back, addr = sock.accept()
-'''
+
 def recvFile(sock:socket, filename):
     try:
-        with open("templates\\"+filename, "wb") as file:
+        with open(filename, "wb") as file:
             data = sock.recv(1024)
             if data.decode() == "no file":
                 log(f"요청한 파일이 없음 : {filename}", 2)
@@ -28,17 +28,15 @@ app = Flask(__name__)
 
 @app.route('/')
 def home():
-    '''
-    if os.path.isfile("index.html"):
+    if os.path.isfile("templates/index.html"):
         back.send("send index.html".encode())
-        recvFile(back, "index.html")
-    if os.path.isfile("index.css"):
+        recvFile(back, "templates/index.html")
+    if os.path.isfile("static/index.css"):
         back.send("send index.css".encode())
-        recvFile(back, "index.css")
-    if os.path.isfile("index.js"):
+        recvFile(back, "static/index.css")
+    if os.path.isfile("static/index.js"):
         back.send("send index.js".encode())
-        recvFile(back, "index.js")
-    '''
+        recvFile(back, "static/index.js")
     return render_template("index.html")
 
 if __name__ == '__main__':
