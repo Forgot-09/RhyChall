@@ -2,8 +2,8 @@ from socket import *
 from log import log
 import os
 
-HOST = "127.0.0.1"
-PORT = 3000
+HOST = "3.35.11.82"
+PORT = 51753
 
 sock = socket(AF_INET, SOCK_STREAM)
 sock.connect((HOST, PORT))
