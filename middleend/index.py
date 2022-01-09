@@ -22,6 +22,7 @@ def recvFile(sock:socket, filename):
             while data:
                 file.write(data)
                 data = sock.recv(1024)
+        log(f"파일 받음 : {filename}")
     except Exception as e:
         log(e, 1)
 
