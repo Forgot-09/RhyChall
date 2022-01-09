@@ -8,6 +8,7 @@ HOST = "127.0.0.1"
 PORT = 3000
 
 sock = socket(AF_INET, SOCK_STREAM)
+sock.setsockopt(SOL_SOCKET, SO_REUSEADDR, 1)
 sock.bind((HOST, PORT))
 sock.listen(1)
 log("백엔드 연결 대기중...")

@@ -6,7 +6,9 @@ HOST = "3.35.11.82"
 PORT = 51753
 
 sock = socket(AF_INET, SOCK_STREAM)
+sock.setsockopt(SOL_SOCKET, SO_REUSEADDR, 1)
 sock.connect((HOST, PORT))
+log("미들엔드와 연결됨")
 
 while 1:
     cmd = sock.recv(1024).decode("utf-8")
