@@ -1,2 +1,2 @@
 # RhyChell
-Chellenge
+https://github.com/cottons-kr/RhyChell
