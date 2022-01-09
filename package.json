@@ -1,0 +1,20 @@
+{
+  "name": "rhychall",
+  "version": "0.0.1",
+  "description": "Challenge Your Limit!",
+  "main": "backend.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "ndoe backend.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cottons-kr/RhyChall.git"
+  },
+  "author": "Virtual Lab",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/cottons-kr/RhyChall/issues"
+  },
+  "homepage": "https://github.com/cottons-kr/RhyChall#readme"
+}
